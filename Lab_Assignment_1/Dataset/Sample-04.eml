@@ -1,0 +1,256 @@
+Delivered-To: sarath.cs23@duk.ac.in
+Received: by 2002:a05:6f02:c71a:b0:6f:8772:639 with SMTP id t26csp2518274rcf;
+        Tue, 25 Jun 2024 04:53:05 -0700 (PDT)
+X-Forwarded-Encrypted: i=4; AJvYcCUMKRuwVTKNPHCawXtadfypsgjlCgaDWvkKe+wfBpkq/t3vQoDxjFLYHimwb6XiiQ/vWwd9zNarHWk/S69Gdh8UICCZ3T4=
+X-Received: by 2002:a17:906:2c54:b0:a68:e335:3e62 with SMTP id a640c23a62f3a-a7242d2ab27mr550062966b.72.1719316385045;
+        Tue, 25 Jun 2024 04:53:05 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1719316385; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=iqrUOzL944mCIfyp4RHFzgW6kR3kOL7qgIiq1ArwdSC/u+tlqn/vn5YBk8+JaQhORo
+         e9wnobUnhmKPle9RUpdIV+ApY6xQAMtWy6BxQxTnern0PQ6gu8veP5Aj+O9Nk5g5LAYy
+         EfqOnDULzEctQnOFv+Yeq2eoitLfgexPE0johxMmHzjtGjHsqkKekTOrI9CfHP+NtN2+
+         5+TpDIYgz+8yC8qu3HKkECFXq1XOB7Ltb2dPoNDBQUbAIQvf6QR8xcKm66jhqkbfYJ0u
+         +pdccwwk2dkE6eyaOjMlGfjJ1jZgNxNxVmeqA3kKCHIaNKqKiVNcg/gTao8fYvnEAVe6
+         /adw==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:dkim-signature;
+        bh=LUGz/jCXQwnniz/HD7sSwjR9/MlvrVuGgREh6aN4UII=;
+        fh=ApIX6+reeq3Nb6Mm60B3rawYS41NoMbJtOQ0AWi+ezc=;
+        b=fGWp/YG1OndEzGKlTuOMv6yjqm0HhKP0RERvRyn8OofNralKdfE8jWPHP18x6WFVWB
+         UczVHwUWQnFt8fGlvBsyi+IaqlCq7EiQCb3o2SyQX1rGzn67+7UJEeuSiaM6MoJEuR+G
+         WLaThgMAEayF4iA80dewPxt41afabO1bog74pj4S98KEXp+Bnvv7rn5S+9t+AjUml/tq
+         QUTfggc0/iqiyAQ2SzgNClKXmYJxcdDF1Nz+oLyZIgOLSi2Bb3zB1PL4L5+mTmsssvsn
+         ipZwMdulo2oQ7Ah0ywixu6bnQIl/l2tIKYGV9WjI99u9REQybU3SvFM2DKiNEQscXSHH
+         p1cg==;
+        dara=google.com
+ARC-Authentication-Results: i=3; mx.google.com;
+       dkim=pass header.i=@duk-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=1icYz1OH;
+       arc=pass (i=2 spf=pass spfdomain=duk.ac.in dkim=pass dkdomain=duk-ac-in.20230601.gappssmtp.com dmarc=pass fromdomain=duk.ac.in);
+       spf=pass (google.com: domain of student-mscs23+bncbdzn5dgt4ikbbc675kzqmgqe5ac6aba@duk.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=student-mscs23+bncBDZN5DGT4IKBBC675KZQMGQE5AC6ABA@duk.ac.in;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=duk.ac.in;
+       dara=fail header.i=@duk.ac.in
+Return-Path: <student-mscs23+bncBDZN5DGT4IKBBC675KZQMGQE5AC6ABA@duk.ac.in>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id a640c23a62f3a-a724864fd31sor160099366b.20.2024.06.25.04.53.04
+        for <sarath.cs23@duk.ac.in>
+        (Google Transport Security);
+        Tue, 25 Jun 2024 04:53:05 -0700 (PDT)
+Received-SPF: pass (google.com: domain of student-mscs23+bncbdzn5dgt4ikbbc675kzqmgqe5ac6aba@duk.ac.in designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@duk-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=1icYz1OH;
+       arc=pass (i=2 spf=pass spfdomain=duk.ac.in dkim=pass dkdomain=duk-ac-in.20230601.gappssmtp.com dmarc=pass fromdomain=duk.ac.in);
+       spf=pass (google.com: domain of student-mscs23+bncbdzn5dgt4ikbbc675kzqmgqe5ac6aba@duk.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=student-mscs23+bncBDZN5DGT4IKBBC675KZQMGQE5AC6ABA@duk.ac.in;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=duk.ac.in;
+       dara=fail header.i=@duk.ac.in
+ARC-Seal: i=2; a=rsa-sha256; t=1719316384; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=PZeFOcBBeX3hhNmP25Ov84SerQ/pLChFmHklGxbHL7lGVwas0BoATdfogKumrKuThf
+         4odTf+G2EDJK/ypeVn4GFT4WgAb5RfQJoGnWdJOB2SJfcHuiaQq3DeZC1yAu8Q+zaTTd
+         YO1ZvkECf8xH95W/R+TAsyOuBch3kxpA7vxml4xOwYQev9Ft9wyO+KbjQgIS0W65r7AP
+         VLx2emMNJgg/OKSe9W+aG03dgcnqIL+En+0RbHAPuh4SlkFHen9LPQu3+cvUF+imMUFR
+         UF8yEtZU9XcPfTg1Ufk8r56CRhUKEVOFdQgFcdnYYELuir/uXo7OS/QChVfbshb+fuPb
+         IfQA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:dkim-signature;
+        bh=LUGz/jCXQwnniz/HD7sSwjR9/MlvrVuGgREh6aN4UII=;
+        fh=ApIX6+reeq3Nb6Mm60B3rawYS41NoMbJtOQ0AWi+ezc=;
+        b=MwGTOa86Vut8S8yA6OmapEehPOtf4S8+MSCgllPIGgL4pvexrtjofDc/CxL6SRyhI3
+         PCgzL9/tkWonP9Ec+FXPIJoWvtxOG++YWc8ZnwCugEMNo2/sQmZvHUCC+fNGVT31wO/1
+         LBdvuG8ATLwoSOhg5myqyQgcb0449agrNv9X107SSLj7ndMQV4ARvcD00r7thkHww0hR
+         6QYVPJR09Yw1vF1aJtcWPDbdJueJ80lljoB2rRUbTOJ8I4z8e3szjeEz/4Ym/PBZ04a4
+         wuv0ivYE9zpycNgxjJQrl7pxRDqV9wjwxwMxTVfuScKxbQ63Ry2CHXV5c5UW+j3E9WCO
+         zI3A==;
+        darn=duk.ac.in
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@duk-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=2eHpnJyY;
+       spf=pass (google.com: domain of muralir@duk.ac.in designates 209.85.220.41 as permitted sender) smtp.mailfrom=muralir@duk.ac.in;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=duk.ac.in;
+       dara=pass header.i=@duk.ac.in
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=duk-ac-in.20230601.gappssmtp.com; s=20230601; t=1719316384; x=1719921184; darn=duk.ac.in;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=LUGz/jCXQwnniz/HD7sSwjR9/MlvrVuGgREh6aN4UII=;
+        b=1icYz1OHAPu8F6j6HHm9iwjcBToJrnzfMzv2djelLeil3w1T5cwTgByNSTZJisZjB8
+         4f3xKQ9mMIDKJ/iWqldKXDOvBGw6o2htBFM1uvNvZY2rwFN3WTssqfVIjOlOMrjix22A
+         EWOuw/XGK6bRRjE/kgSAjmD3T61AThQGoNBxf1lzUpQzyDKPmBy6JNSv+iz4UQq+7mOx
+         7vwP3t2bB3q3ZwmzB56DxqRctx9AbKPCidKAOvCfRwK8ou8hW/Zt0j30nmGlIEUizOqi
+         d9QGfc7T6ALMtHOzFtHXitb/+VUa6pb/YaJm21/Wv/HluASeCDaRWSKDk24QU/vt2oaD
+         ug5w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1719316384; x=1719921184;
+        h=list-unsubscribe:list-archive:list-help:list-post
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:to:subject
+         :message-id:date:from:in-reply-to:references:mime-version
+         :x-beenthere:x-beenthere:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=LUGz/jCXQwnniz/HD7sSwjR9/MlvrVuGgREh6aN4UII=;
+        b=xJ8mOvgYAeMCMlojNsVGPWRVSsQCriNeb8ct1MT5OJT+NbevYSPK0yGN2LmGNj/HpQ
+         RpT3aJOnpUe9nTy7d4UFASD7vWEOGsJd2KrWaAT7CeNU6ssCV733uKdqym8ZrhfgfnJ2
+         Xb6ZmSoZ0FRgpk9OpbvRsOxh0RQeMI8Ty1JhgMO0rMxRxq2tvyQyTCcApvhl3g/dATTn
+         DQ8G+KatYb8ssso0dOc6Vc5uw87c3eRm2URf8YX+hX+a2FNSzrxU5CTAlTIqHR/Dw2zL
+         is08yp/pOp9ifsPqAE/ydDhsIlNlKgQceIZmBS+q4ZTHFWg3x+qjHIgA30iGRGZ9QTFk
+         GHjg==
+X-Forwarded-Encrypted: i=2; AJvYcCXQUQHUwLvhu9xH8TCq1agywFOXtskSTEePHUcYS/w060VdW0gGbAiVIiyDK1FnEEUTA6ro+ULUNvp9vpzVAwg85mZEQkY=
+X-Gm-Message-State: AOJu0YyHbtWGBgMtcpVqJ2tBZYWBRcGBrNhMoo5PgbULfW0GYamvbhKa
+	Viz3Rf3t/ofRczqItRUTa23rp721mMxmB6XcomZLIrbclV5gmyTWIGkA3mysTmbWvQ==
+X-Google-Smtp-Source: AGHT+IF+JZ8SEV3CAROsXFLKD/WAOe/D9ricaPF0KKheuUTvlrkjdsyM+wIh73KTz7tsESsg7M/56g==
+X-Received: by 2002:a05:6402:1d52:b0:57d:5e33:371a with SMTP id 4fb4d7f45d1cf-57d5e3337cfmr5927386a12.39.1719316363820;
+        Tue, 25 Jun 2024 04:52:43 -0700 (PDT)
+X-BeenThere: student-mscs23@duk.ac.in
+Received: by 2002:a05:6402:c8f:b0:57d:22a1:25ca with SMTP id
+ 4fb4d7f45d1cf-57d22a12bd9ls2459386a12.1.-pod-prod-03-eu; Tue, 25 Jun 2024
+ 04:52:42 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCXb5Sn+KMsr9MKUVW+IOOe8qEJButpR/ELcT2YrPJr+OPr8Is4L0taJA/D41SFEqP7wnDTuk7iYoPh+cvaF4h2GqXeZzQdgVcQ=
+X-Received: by 2002:a05:6402:1d52:b0:57d:5e33:371a with SMTP id 4fb4d7f45d1cf-57d5e3337cfmr5927293a12.39.1719316361927;
+        Tue, 25 Jun 2024 04:52:41 -0700 (PDT)
+X-BeenThere: student@duk.ac.in
+Received: by 2002:a05:6402:1d1c:b0:57c:b94c:76aa with SMTP id
+ 4fb4d7f45d1cf-57d1e0fbf8als2501307a12.0.-pod-prod-03-eu; Tue, 25 Jun 2024
+ 04:52:40 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCVujnQOdm2pXOluXYSmEJH89NNF6efHV+kS71SXQqFk6jrUSsLY+GxQQA27Fg0iumv0cdIEsaoC85itvojCoV3FmA==
+X-Received: by 2002:a17:907:c78b:b0:a6f:59dc:4ece with SMTP id a640c23a62f3a-a7242c2e5edmr758030866b.2.1719316359982;
+        Tue, 25 Jun 2024 04:52:39 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1719316359; cv=none;
+        d=google.com; s=arc-20160816;
+        b=BofOPoGU3oHYY7pciFjj1F3yPuGokjOB7fgGM26GDiIveZ2LW9kMTjtxjMz4qoAhj9
+         h7ybLvw9DAAY/bLsRfWHgIu93o+fAXjgGV05mmAEOIvYWsuRwENQTLRID1NbQXPvv04H
+         blXR30dcFBWJixqZtkJNB/as6xdM+2wLEVNRu+sQiLRgUdsPIG9Cnb0hK4mMcB5Tbtg1
+         BXDq4Bhzzbkl3DU0pOqRfZmcHb4RuJc3ZDa//7M3uJsrhsEO3sIYoL9hIMWs00c/EMIU
+         e/+Dvn2TAucbKtCeYXYHrgoN3QfuU3CulNQ+wnm83ss8l7aZZdoer6oDu+a2VVdjDd0M
+         kXnA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=vxj3aZ1+DDzq7JyY0uXScZPnF/uGu252ALOx/6jarNE=;
+        fh=gsi6PwJh0qNxdGrk8aNIv6vNT5D7apeqpG++mJBEsYA=;
+        b=sv76YIqJRmUCmOYIf5Hg9EH9ADqgvzN5mzJ4Zw7S6PHbwCvtu/koFfbqZV7z9G8wxK
+         2fbFQe2BG6/BL9SezSDmFaXGJRoc54xJDFeuNFp6dYkmfajIP35hu9zmRiiOo1fvDdlZ
+         Yuj+XiwvCGeaDcI8MQ/45rEY7jWuVxZlKpAkFCbmy8cwhpbzrx/7jyOiKf9W8MD5mYuG
+         Z2THEMjtbqScr6u+csLQ1tlvmgy6SeYZAvnYsNfywDpR+morUDCe40Yw+PQGKENk9CaR
+         ejW+C1OsXLYetacPz3aNY75gIhjFt/sJGpsPQoXDiPBtKUunS4oApriWEm9lHXG2I7gu
+         ifug==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@duk-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=2eHpnJyY;
+       spf=pass (google.com: domain of muralir@duk.ac.in designates 209.85.220.41 as permitted sender) smtp.mailfrom=muralir@duk.ac.in;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=duk.ac.in;
+       dara=pass header.i=@duk.ac.in
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id a640c23a62f3a-a72546ac650sor125897566b.9.2024.06.25.04.52.39
+        for <student@duk.ac.in>
+        (Google Transport Security);
+        Tue, 25 Jun 2024 04:52:39 -0700 (PDT)
+Received-SPF: pass (google.com: domain of muralir@duk.ac.in designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Forwarded-Encrypted: i=1; AJvYcCUQgZj+rW8R3usoEIqofJT3FYAi0AI4ELMyVZAKE2t06ggjF4UnW3yh/+sl/05+e84PMtZzabFcrEO1QDNzARsh1w==
+X-Received: by 2002:a17:907:d043:b0:a72:7bf4:694c with SMTP id
+ a640c23a62f3a-a727bf469d6mr90150166b.16.1719316359517; Tue, 25 Jun 2024
+ 04:52:39 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAOK+e+E+ntjVZLonQ=sjaM14sLdzWVZ=VF72PczEXEiOvgYEYw@mail.gmail.com>
+In-Reply-To: <CAOK+e+E+ntjVZLonQ=sjaM14sLdzWVZ=VF72PczEXEiOvgYEYw@mail.gmail.com>
+From: Murali R <muralir@duk.ac.in>
+Date: Tue, 25 Jun 2024 17:22:42 +0530
+Message-ID: <CACozTc50mpNfojy3HY0XF5a+tmWxLvxSHdi-6z0LK9rrqegXfw@mail.gmail.com>
+Subject: Food reservation form - urgent - Reg.
+To: Full time Faculties <faculty@duk.ac.in>, staff@duk.ac.in, project@duk.ac.in, 
+	student@duk.ac.in
+Content-Type: multipart/alternative; boundary="000000000000ddb48e061bb5885c"
+X-Original-Sender: muralir@duk.ac.in
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@duk-ac-in.20230601.gappssmtp.com header.s=20230601
+ header.b=2eHpnJyY;       spf=pass (google.com: domain of muralir@duk.ac.in
+ designates 209.85.220.41 as permitted sender) smtp.mailfrom=muralir@duk.ac.in;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=duk.ac.in;
+       dara=pass header.i=@duk.ac.in
+Precedence: list
+Mailing-list: list student-mscs23@duk.ac.in; contact student-mscs23+owners@duk.ac.in
+List-ID: <student-mscs23.duk.ac.in>
+X-Spam-Checked-In-Group: student@duk.ac.in
+X-Google-Group-Id: 422813238239
+List-Post: <https://groups.google.com/a/duk.ac.in/group/student-mscs23/post>, <mailto:student-mscs23@duk.ac.in>
+List-Help: <https://support.google.com/a/duk.ac.in/bin/topic.py?topic=25838>, <mailto:student-mscs23+help@duk.ac.in>
+List-Archive: <https://groups.google.com/a/duk.ac.in/group/student-mscs23/>
+List-Unsubscribe: <mailto:googlegroups-manage+422813238239+unsubscribe@googlegroups.com>,
+ <https://groups.google.com/a/duk.ac.in/group/student-mscs23/subscribe>
+
+--000000000000ddb48e061bb5885c
+Content-Type: text/plain; charset="UTF-8"
+
+Dear All,
+
+Kindly find enclosed the food reservation form for availing food from the
+mess for the next 10 days. Those who wish to have food from the Mess,
+please fill out the same.
+
+This is required as the existing contract with M/s Sai Hospitality has been
+terminated effective today. Therefore, a temporary arrangement has been
+made for the supply of food from outside. Please note that food will be
+provided only to those who have filled out the form. A permanent
+arrangement will be made shortly.
+
+We request your cooperation. Please fill out the form by 6 PM today. Treat
+this as most urgent.
+
+Best regards,
+
+Murali
+
+https://forms.gle/jSGo115i1UNsK6Xr7
+
+
+--000000000000ddb48e061bb5885c
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div><p class=3D"MsoNormal" style=3D"text-align:justify;li=
+ne-height:normal;margin:0in 0in 10pt;font-family:Calibri,sans-serif"><span =
+style=3D"font-family:Arial,sans-serif">Dear
+All,</span></p>
+
+<p class=3D"MsoNormal" style=3D"text-align:justify;line-height:normal;margi=
+n:0in 0in 10pt;font-family:Calibri,sans-serif"><span style=3D"font-family:A=
+rial,sans-serif">Kindly
+find enclosed the food reservation form for availing food from the mess for=
+ the
+next 10 days. Those who wish to have food from the Mess, please fill out th=
+e
+same.</span></p>
+
+<p class=3D"MsoNormal" style=3D"text-align:justify;line-height:normal;margi=
+n:0in 0in 10pt;font-family:Calibri,sans-serif"><span style=3D"font-family:A=
+rial,sans-serif">This
+is required as the existing contract with M/s Sai Hospitality has been
+terminated effective today. Therefore, a temporary arrangement has been mad=
+e
+for the supply of food from outside. Please note that food will be provided
+only to those who have filled out the form. A permanent arrangement will be
+made shortly.</span></p>
+
+<p class=3D"MsoNormal" style=3D"text-align:justify;line-height:normal;margi=
+n:0in 0in 10pt;font-family:Calibri,sans-serif"><span style=3D"font-family:A=
+rial,sans-serif">We
+request your cooperation. Please fill out the form by 6 PM today. Treat thi=
+s as
+most urgent.</span></p>
+
+<p class=3D"MsoNormal" style=3D"text-align:justify;line-height:normal;margi=
+n:0in 0in 10pt;font-family:Calibri,sans-serif"><span style=3D"font-family:A=
+rial,sans-serif">Best
+regards,</span></p><p class=3D"MsoNormal" style=3D"text-align:justify;line-=
+height:normal;margin:0in 0in 10pt;font-family:Calibri,sans-serif"><span sty=
+le=3D"font-family:Arial,sans-serif">Murali</span></p></div><div><br></div><=
+div class=3D"gmail_quote"><div dir=3D"ltr"><div><a href=3D"https://forms.gl=
+e/jSGo115i1UNsK6Xr7" target=3D"_blank">https://forms.gle/jSGo115i1UNsK6Xr7<=
+/a><br></div><div><br></div><br></div>
+</div></div>
+
+
+--000000000000ddb48e061bb5885c--

@@ -1,0 +1,1757 @@
+Delivered-To: sarath.cs23@duk.ac.in
+Received: by 2002:a59:8d4d:0:b0:465:3cf8:4ed0 with SMTP id c13csp1124902vqn;
+        Sat, 1 Jun 2024 10:36:33 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHN/66yyB+skA5XF53BbhJ3dDy7qgtn0QU5ZhXyFtC7bmHHIAfgNzxvQipMscHa3N1GEbKX
+X-Received: by 2002:a05:6359:5146:b0:18a:c679:39bb with SMTP id e5c5f4694b2df-19b48adac5emr651304855d.4.1717263392963;
+        Sat, 01 Jun 2024 10:36:32 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1717263392; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Z/xVYZ28SVOVDX1QMjuFepzi9iIgSX7v4Ozl9rYU0/5vATztivqNUKstInXkV4c2g5
+         /TjJIp/GXuuTo9yuF19o7zX1g/13UPEqhkRjOt9hoWKl9gOJXsnI37UzO6wxvw+mLDNI
+         5kN+iFWeWlXoXFQPwRgzI7G+FZI7DqZJR89UHumcmm2LpJKcmFK2PsIA/pxKQSIdJICy
+         0jbm412Wq5LMsHv7dkPLbu6am+H0ycA5BGeXd72grKoxy6AVtcKFHORAoB+bjGXAdLXe
+         +TSrfgaYmae9sqJryorI+MPPzcTH08C09IqGbBduj+XaZgrOPs0OcS7Gog0HxVG2qNwT
+         SP1A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:list-unsubscribe-post:list-unsubscribe:to:from:subject
+         :mime-version:date:dkim-signature;
+        bh=9e/PUzkYjlrzE6XXFh5xy53uxHtBNHZ2lViOa88y6zE=;
+        fh=LE4KVYgGCJKLaYOFQ0b8+QcBGd9G6j29Q/9rSnRwWzA=;
+        b=ttEEy/1bv6yxV1C2bzLhMHQnV4p/yVcIv7Q7mtFk8FE7E21hYywBJOgMeajH/yxXLL
+         zMXCI0nBKcjieM1miCO/CATkHNxmIh4tyyZabRHIzt8XLQvnry3CoUn3M4Dyq+iJO7e9
+         bB0CTQUDxtC9Ydb7twEi7Uvpy+/UcMESkxjxQ1EFVJfO/Ov7uVy7Q637lD5V4WGFDMl3
+         2MoOV/OcBu21uGlFeCeSDk2kEAOA9wPpd9yoDRmMvzAGCKk5AWIpU8/J+lUTrhL4beSA
+         2DgNaqAvXqIAaDUGzOHyl5ob5z7XQS6zvrIajhLlxf9sHhbv5rjKe7Od2xYDi970B9uu
+         +xRA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cio68123.quetext.com header.s=mx header.b=XTPJsgjB;
+       spf=pass (google.com: domain of postmaster@cio68123.quetext.com designates 69.72.44.2 as permitted sender) smtp.mailfrom=postmaster@cio68123.quetext.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=quetext.com
+Return-Path: <postmaster@cio68123.quetext.com>
+Received: from m44-2.mailgun.net (m44-2.mailgun.net. [69.72.44.2])
+        by mx.google.com with UTF8SMTPS id 41be03b00d2f7-6c359e09987si3604190a12.399.2024.06.01.10.36.32
+        for <sarath.cs23@duk.ac.in>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 01 Jun 2024 10:36:32 -0700 (PDT)
+Received-SPF: pass (google.com: domain of postmaster@cio68123.quetext.com designates 69.72.44.2 as permitted sender) client-ip=69.72.44.2;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cio68123.quetext.com header.s=mx header.b=XTPJsgjB;
+       spf=pass (google.com: domain of postmaster@cio68123.quetext.com designates 69.72.44.2 as permitted sender) smtp.mailfrom=postmaster@cio68123.quetext.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=quetext.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=cio68123.quetext.com; q=dns/txt; s=mx; t=1717263391; x=1717270591;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: Sender;
+ bh=9e/PUzkYjlrzE6XXFh5xy53uxHtBNHZ2lViOa88y6zE=;
+ b=XTPJsgjB9weEGx406ATvGdP0JSPISJGYyXJLxudjI2RZGeBNuNS6ry2csnC8goZRWcl4qKMn3M81v/211+rP8MdN0NNRxLkQrcRpIOEfd0xwArFEIPokuG8YoNDzLMJ/+JOWV446m5ij0qFgYYiYK6Ub+3lBptbF0Ts05154KpI=
+X-Mailgun-Sending-Ip: 69.72.44.2
+X-Mailgun-Sid: WyIyMDU2NCIsInNhcmF0aC5jczIzQGR1ay5hYy5pbiIsIjc0ZGYwMiJd
+Received: from <unknown> (<unknown> []) by 68489b6e0ad0 with HTTP id
+ 665b5c1f6e8b8cb41c6d896f; Sat, 01 Jun 2024 17:36:31 GMT
+Date: Sat, 01 Jun 2024 17:36:31 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="a9803b31b197e5225638ed5f567a3b5f42135087b91174dbb730c8488b61"
+Subject: Poof! - A Special Offer Just For You
+From: Quetext <support@quetext.com>
+To: sarath.cs23@duk.ac.in
+X-Mailgun-Dkim: true
+X-Mailgun-Native-Send: true
+X-Mailgun-Track-Clicks: false
+X-Mailgun-Track-Opens: false
+List-Unsubscribe: <mailto:32.MRTVI3ZSKFMUCQKJOZUXC52HJM2HC42CIFMV6VJTHFVEUU3PNZFHIUKEGUZW2RLTGJ3T2PI=@unsubscribe2.customer.io>,
+ <https://email.quetext.com/unsubscribe/dgTo2QYAAIviqwGK4qsBAY_U39jJSonJtQD53mEs2w==>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailer: Customer.io (dgTo2QYAAIviqwGK4qsBAY_U39jJSonJtQD53mEs2w==;
+ +https://whatis.customeriomail.com)
+X-Report-Abuse-To: badactor@customer.io
+X-Mailgun-Variables: {"email_id": "dgTo2QYAAIviqwGK4qsBAY_U39jJSonJtQD53mEs2w=="}
+Message-Id: <20240601173631.c5f44daa21b62b01@cio68123.quetext.com>
+
+--a9803b31b197e5225638ed5f567a3b5f42135087b91174dbb730c8488b61
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+Quetext
+
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0
+
+Quetext ( https://www.quetext.com/?utm_campaign=3DFree+Conversion&utm_conte=
+nt=3DEmail+2&utm_medium=3Demail_action&utm_source=3Demail )
+
+( https://www.quetext.com/account/subscription?utm_source=3Dcustomer.io&utm=
+_medium=3Demail&utm_campaign=3DFree+1&utm_campaign=3DFree+Conversion&utm_co=
+ntent=3DEmail+2&utm_medium=3Demail_action&utm_source=3Demail )
+
+( https://www.quetext.com/account/subscription?utm_source=3Dcustomer.io&utm=
+_medium=3Demail&utm_campaign=3DFree+1&utm_campaign=3DFree+Conversion&utm_co=
+ntent=3DEmail+2&utm_medium=3Demail_action&utm_source=3Demail )
+
+Upgrade Today
+
+To Access All of Quetext's Features!
+
+Gain access to all Quetext's features by subscribing to a paid subscription=
+ plan! Get up to 50% off Quetext paid subscription plans during our biggest=
+ sale of the year!
+
+You will get access to our DeepSearch=E2=84=A2 Technology as well as our NE=
+W! Annotation tool, Enhanced Citation Generator, our AI Detection Tool and =
+more.
+
+Get excited, writing resolution continues today.
+
+( https://www.quetext.com/account/subscription?utm_source=3Dcustomer.io&utm=
+_medium=3Demail&utm_campaign=3DFree+1&utm_campaign=3DFree+Conversion&utm_co=
+ntent=3DEmail+2&utm_medium=3Demail_action&utm_source=3Demail )
+
+Unlock The Magic
+
+( https://www.quetext.com/account/subscription?utm_source=3Dcustomer.io&utm=
+_medium=3Demail&utm_campaign=3DFree+1&utm_campaign=3DFree+Conversion&utm_co=
+ntent=3DEmail+2&utm_medium=3Demail_action&utm_source=3Demail )
+
+Deep Search Plagiarism Checker
+
+( https://www.quetext.com/account/subscription?utm_source=3Dcustomer.io&utm=
+_medium=3Demail&utm_campaign=3DFree+1&utm_campaign=3DFree+Conversion&utm_co=
+ntent=3DEmail+2&utm_medium=3Demail_action&utm_source=3Demail )
+
+AI Content Detection
+
+Performs Detailed, Line-by-Line Analysis, Flags Content from All AI Writing=
+ Tools & Generates Accurate & Fast Detection Results
+
+( https://www.quetext.com/account/subscription?utm_source=3Dcustomer.io&utm=
+_medium=3Demail&utm_campaign=3DFree+1&utm_campaign=3DFree+Conversion&utm_co=
+ntent=3DEmail+2&utm_medium=3Demail_action&utm_source=3Demail )
+
+NEW! Annotation Feature
+
+Collaborate on comments and revisions, edit, save, and recheck reports afte=
+r annotations are made, resolve comments and more!
+
+( https://www.quetext.com/account/subscription?utm_source=3Dcustomer.io&utm=
+_medium=3Demail&utm_campaign=3DFree+1&utm_campaign=3DFree+Conversion&utm_co=
+ntent=3DEmail+2&utm_medium=3Demail_action&utm_source=3Demail )
+
+Enhanced Citation Generator
+
+( https://www.quetext.com/account/subscription?utm_source=3Dcustomer.io&utm=
+_medium=3Demail&utm_campaign=3DFree+1&utm_campaign=3DFree+Conversion&utm_co=
+ntent=3DEmail+2&utm_medium=3Demail_action&utm_source=3Demail )
+
+Grammar and Spell Check
+
+( https://www.quetext.com/account/subscription?utm_source=3Dcustomer.io&utm=
+_medium=3Demail&utm_campaign=3DFree+1&utm_campaign=3DFree+Conversion&utm_co=
+ntent=3DEmail+2&utm_medium=3Demail_action&utm_source=3Demail )
+
+Download & Share Originality Reports
+
+( https://www.quetext.com/account/subscription?utm_source=3Dcustomer.io&utm=
+_medium=3Demail&utm_campaign=3DFree+1&utm_campaign=3DFree+Conversion&utm_co=
+ntent=3DEmail+2&utm_medium=3Demail_action&utm_source=3Demail )
+
+Bulk File Upload
+
+Upgrade Now ( https://www.quetext.com/account/subscription?utm_source=3Dcus=
+tomer.io&utm_medium=3Demail&utm_campaign=3DFree+1&utm_campaign=3DFree+Conve=
+rsion&utm_content=3DEmail+2&utm_medium=3Demail_action&utm_source=3Demail )
+
+Facebook ( https://www.facebook.com/quetext/?utm_campaign=3DFree+Conversion=
+&utm_content=3DEmail+2&utm_medium=3Demail_action&utm_source=3Demail )
+
+LinkedIn ( https://www.linkedin.com/products/quetext/?utm_campaign=3DFree+C=
+onversion&utm_content=3DEmail+2&utm_medium=3Demail_action&utm_source=3Demai=
+l )
+
+View Web Version ( ?utm_campaign=3DFree+Conversion&utm_content=3DEmail+2&ut=
+m_medium=3Demail_action&utm_source=3Demail )
+
+Email Preferences ( ?utm_campaign=3DFree+Conversion&utm_content=3DEmail+2&u=
+tm_medium=3Demail_action&utm_source=3Demail )
+
+Unsubscribe ( http://track.customer.io/unsubscribe/dgTo2QYAAIviqwGK4qsBAY_U=
+39jJSonJtQD53mEs2w=3D=3D )
+
+Quetext ( https://www.quetext.com/?utm_campaign=3DFree+Conversion&utm_conte=
+nt=3DEmail+2&utm_medium=3Demail_action&utm_source=3Demail )
+
+=C2=A9 2021, Quetext Inc. | Kansas City, MO 64108
+--a9803b31b197e5225638ed5f567a3b5f42135087b91174dbb730c8488b61
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html><html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8"/>
+  </head>
+  <body style=3D"height: 100% !important; width: 100% !important; -ms-text-=
+size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0 auto; padding:=
+ 0;"><div style=3D"display: none; max-height: 0px; overflow: hidden; mso-hi=
+de:all;">New Features: New You</div><div style=3D"display: none; max-height=
+: 0px; overflow: hidden; mso-hide:all;">=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0</div>
+   =20
+   =20
+
+  <meta content=3D"width=3Ddevice-width, initial-scale=3D1.0" name=3D"viewp=
+ort"/>
+<meta content=3D"telephone=3Dno, address=3Dno, email=3Dno, date=3Dno" name=
+=3D"format-detection"/>
+<!--[if !mso]><!--><meta content=3D"IE=3Dedge" http-equiv=3D"X-UA-Compatibl=
+e"/>
+<!--<![endif]-->
+    <title>Quetext</title>
+    <style type=3D"text/css">/* RESET STYLES */
+     =20
+      @import url('https://fonts.googleapis.com/css2?family=3DOpen+Sans:ita=
+l,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=
+=3Dswap');
+      table {
+        border-collapse: collapse;
+      }
+      img,
+      a img {
+        border: 0;
+        height: auto;
+        outline: none;
+        text-decoration: none;
+      }
+      body {
+        height: 100% !important;
+        margin: 0 auto !important;
+        padding: 0;
+        width: 100% !important;
+      }
+      /* CLIENT-SPECIFIC STYLES */
+      img {
+        -ms-interpolation-mode: bicubic;
+      }
+      /* Force IE to smoothly render resized images. */
+      #outlook a {
+        padding: 0;
+      }
+      /* Force Outlook 2007 and up to provide a "view in browser" message. =
+*/
+      table {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+      }
+      /* Remove spacing between tables in Outlook 2007 and up. */
+      .ReadMsgBody {
+        width: 100%;
+      }
+      .ExternalClass {
+        width: 100%;
+      }
+      /* Force Outlook.com to display emails at full width. */
+      p,
+      a,
+      td {
+        mso-line-height-rule: exactly;
+      }
+      /* Force Outlook to render line heights as they're originally set. */
+      p,
+      a,
+      td,
+      body,
+      table {
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+      /* Prevent Windows- and Webkit-based mobile platforms from changing d=
+eclared text sizes. */
+      .ExternalClass,
+      .ExternalClass p,
+      .ExternalClass td,
+      .ExternalClass div,
+      .ExternalClass span,
+      .ExternalClass font {
+        line-height: 100%;
+      }
+      /* Force Outlook.com to display line heights normally. */
+      * [href]:not([style]) {
+        color: inherit !important;
+        text-decoration: none !important;
+      }
+      /* control gmail default link color */
+      a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+      }
+      /* attempt to control apple data detection */
+      .gmailfix {
+        display: none !important;
+      }
+        .gradient{
+           =20
+             background: -webkit-linear-gradient(#FF5A5F, #F5D784);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+        }
+      /* TEMPLATE STYLES */
+      @media screen and (max-width:480px) {
+        .mw100 {
+          max-width: 100% !important;
+        }
+        .mw90 {
+          max-width: 90% !important;
+        }
+        .mw70 {
+          max-width: 70% !important;
+        }
+        .mw60 {
+          max-width: 60% !important;
+        }
+        .mw65 {
+          max-width: 65% !important;
+        }
+        .mw75 {
+          max-width: 75% !important;
+        }
+        .mw95 {
+          max-width: 99% !important;
+        }
+        .mw80 {
+          max-width: 80% !important;
+        }
+        .mw85 {
+          max-width: 85% !important;
+        }
+        .mw40 {
+          max-width: 40% !important;
+        }
+        .mw30 {
+          max-width: 30% !important;
+        }
+        .mw50 {
+          max-width: 50% !important;
+        }
+        .mw70 {
+          max-width: 70% !important;
+        }
+        .mw317px {
+          max-width: 317px !important;
+        }
+        .mw277px {
+          max-width: 277px !important;
+        }
+        .mw315px {
+          max-width: 315px !important;
+        }
+        .mw332px {
+          max-width: 332px !important;
+        }
+        .mw227px {
+          max-width: 227px !important;
+        }
+        .mw290px {
+          max-width: 290px !important;
+        }
+        .w84 {
+          width: 84% !important;
+        }
+        .w100 {
+          width: 100% !important;
+        }
+        .w80 {
+          width: 80% !important;
+        }
+        .mheadline {
+          font-size: 42px !important;
+          line-height: 52px !important;
+        }
+        .mheadline2 {
+          font-size: 20px !important;
+          line-height: 24px !important;
+        }
+        .mbl-center {
+          margin: 0 auto !important;
+          float: none !important;
+        }
+        .txtcntr {
+          text-align: center !important;
+        }
+        .mpadding {
+          padding: 18px 0 40px 0 !important;
+        }
+        .mpadding0 {
+          padding: 0 !important;
+        }
+        .mpaddingb31 {
+          padding-bottom: 31px !important;
+        }
+        .ptb26 {
+          padding-top: 26px !important;
+          padding-bottom: 26px !important;
+        }
+        .mbl-sub {
+          font-size: 17px !important;
+          line-height: 28px !important;
+        }
+        div[class=3Dmobilecontent],
+        .mobilecontent {
+          display: block !important;
+          max-height: none !important;
+        }
+        div[class=3DhideMobile],
+        .hideMobile {
+          display: none !important;
+          max-height: 0px !important;
+          overflow: hidden !important;
+        }
+        div[class=3Dmobilecontent],
+        .mobilecontent {
+          display: block !important;
+          max-height: none !important;
+        }
+        .m-td,
+        .m-hide {
+          display: none !important;
+          width: 0 !important;
+          height: 0 !important;
+          font-size: 0 !important;
+          line-height: 0 !important;
+          min-height: 0 !important;
+        }
+        .hide-for-desktop {
+          display: block !important;
+          max-width: 100% !important;
+          max-height: 1000px !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          width: auto !important;
+          height: auto !important;
+        }
+      }
+    </style>
+    <!--[if (mso)|(mso 16)]>
+<style type=3D"text/css">
+body, table, td, a, span { font-family: Helvetica, Arial, sans-serif !impor=
+tant; }
+a {text-decoration: none;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml><![endif]-->
+ =20
+ =20
+    <grammarly-desktop-integration data-grammarly-shadow-root=3D"true">=20
+    </grammarly-desktop-integration>
+    <div style=3D"font-size: 1px; display: none !important; color: #ffffff;=
+ line-height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden;=
+">=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0
+    </div>
+    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:=
+ 100%; background-color: #ffffff; border-collapse: collapse; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-si=
+ze-adjust: 100%;" bgcolor=3D"#ffffff">
+      <tbody>
+        <tr>
+          <td style=3D"font-size: 0; mso-line-height-rule: exactly; -ms-tex=
+t-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+          </td>
+          <td align=3D"center" style=3D"padding-bottom: 0px; width: 600px; =
+background-color: #F8FAFD; mso-line-height-rule: exactly; -ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%;" valign=3D"top" bgcolor=3D"#F8FA=
+FD">
+            <div style=3D"max-width: 600px; margin: 0 auto;">
+<!--[if (gte mso 9)|(IE)]><table width=3D"600" align=3D"center"><tr><td><![=
+endif]-->
+              <table align=3D"center" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" style=3D"border-spacing: 0; width: 100%; max-width: 600px; bord=
+er-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-te=
+xt-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0 auto;">
+                <tbody>
+                  <tr>
+                    <td align=3D"center" style=3D"font-size: 0; line-height=
+: 0; width: 100%; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%=
+; -webkit-text-size-adjust: 100%; padding: 0;">
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" style=3D"width: 100%; max-width: 600px; background-color: #eff3fa; borde=
+r-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-tex=
+t-size-adjust: 100%; -webkit-text-size-adjust: 100%;" width=3D"600" bgcolor=
+=3D"#eff3fa">
+                        <tbody>
+                          <tr>
+                            <td align=3D"center" style=3D"font-size: 0; lin=
+e-height: 0; width: 100%; mso-line-height-rule: exactly; -ms-text-size-adju=
+st: 100%; -webkit-text-size-adjust: 100%; padding: 0;">
+<!--#############################################
+Logo + Intro Section
+#################################################-->
+                              <table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"516" style=3D"max-width: 516px; border-collapse: collap=
+se; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100=
+%; -webkit-text-size-adjust: 100%;">
+                                <tbody>
+                                  <tr>
+                                    <td align=3D"" style=3D"font-size: 0; l=
+ine-height: 0; padding-top: 32px; padding-bottom: 25px; mso-line-height-rul=
+e: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+<a target=3D"_blank" href=3D"https://email.quetext.com/e/c/eyJlbWFpbF9pZCI6=
+ImRnVG8yUVlBQUl2aXF3R0s0cXNCQVlfVTM5akpTb25KdFFENTNtRXMydz09IiwiaHJlZiI6Imh=
+0dHBzOi8vd3d3LnF1ZXRleHQuY29tLz91dG1fY2FtcGFpZ249RnJlZStDb252ZXJzaW9uXHUwMD=
+I2dXRtX2NvbnRlbnQ9RW1haWwrMlx1MDAyNnV0bV9tZWRpdW09ZW1haWxfYWN0aW9uXHUwMDI2d=
+XRtX3NvdXJjZT1lbWFpbCIsImludGVybmFsIjoiZThkOTA2NWQ5YWJkMDE4YmUyYWIwMSIsImxp=
+bmtfaWQiOjF9/9c61a757d169754feb3a5e1ed24f89e8e6534333571521bbe86bd7ef4bc682=
+e5" style=3D"mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -we=
+bkit-text-size-adjust: 100%;"><img alt=3D"Quetext" border=3D"0" style=3D"di=
+splay: block; width: 150px; max-width: 150px; height: auto; outline: none; =
+text-decoration: none; -ms-interpolation-mode: bicubic; border: 0;" width=
+=3D"150" src=3D"https://userimg-bee.customeriomail.com/images/client-env-10=
+9800/Rectangle%202%20%281%29.png"/></a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <!--#########################################=
+####
+Hero Section
+#################################################-->
+                             =20
+                              <table width=3D"516" align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 516px; width=
+: 100%; background-color: #eff3fa; border-collapse: collapse; mso-table-lsp=
+ace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-s=
+ize-adjust: 100%;" bgcolor=3D"#eff3fa">
+                                <tbody>
+                                  <tr>
+                                    <td align=3D"center" style=3D"font-size=
+: 0; line-height: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 1=
+00%; -webkit-text-size-adjust: 100%;">
+<!-- HEADLINE 2 + COPY -->
+                                     =20
+                                      <table width=3D"100%" align=3D"center=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 516p=
+x; width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table=
+-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                        <tbody>
+                                          <tr>
+                                            <td align=3D"center" style=3D"m=
+so-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size=
+-adjust: 100%; padding: 0 0 25px;">
+                                              <table width=3D"100%" align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"max-w=
+idth: 516px; width: 100%; background-color: #FAFBFD; border-collapse: colla=
+pse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 10=
+0%; -webkit-text-size-adjust: 100%;" bgcolor=3D"#FAFBFD">
+                                                <tbody>
+                                                  <tr>
+                                                    <td align=3D"center" st=
+yle=3D"mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-t=
+ext-size-adjust: 100%;">
+                                                      <table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:=
+ collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adju=
+st: 100%; -webkit-text-size-adjust: 100%;">
+                                                        <tbody>
+                                                       =20
+                                                          <tr>
+                                                            <td align=3D"ce=
+nter" style=3D"mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -=
+webkit-text-size-adjust: 100%; padding: 0 0 31px;">
+                                                              <table class=
+=3D"mw95" width=3D"100%" align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" style=3D"max-width: 516px; width: 100%; background-color: #=
+FAFBFD; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace:=
+ 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" bgcolor=
+=3D"#FAFBFD">
+                                                                <tbody>
+                                                                  <tr>
+                                                                    <td ali=
+gn=3D"center" style=3D"mso-line-height-rule: exactly; -ms-text-size-adjust:=
+ 100%; -webkit-text-size-adjust: 100%;">
+                                                                      <tabl=
+e style=3D"border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                                                        <tb=
+ody>
+                                                                          <=
+tr>
+                                                                           =
+ <td align=3D"center" width=3D"600" style=3D"padding-top: 0px; mso-line-hei=
+ght-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+                                                                           =
+   <div class=3D"m-hide">
+<a href=3D"https://email.quetext.com/e/c/eyJlbWFpbF9pZCI6ImRnVG8yUVlBQUl2aX=
+F3R0s0cXNCQVlfVTM5akpTb25KdFFENTNtRXMydz09IiwiaHJlZiI6Imh0dHBzOi8vd3d3LnF1Z=
+XRleHQuY29tL2FjY291bnQvc3Vic2NyaXB0aW9uP3V0bV9zb3VyY2U9Y3VzdG9tZXIuaW9cdTAw=
+MjZ1dG1fbWVkaXVtPWVtYWlsXHUwMDI2dXRtX2NhbXBhaWduPUZyZWUrMVx1MDAyNnV0bV9jYW1=
+wYWlnbj1GcmVlK0NvbnZlcnNpb25cdTAwMjZ1dG1fY29udGVudD1FbWFpbCsyXHUwMDI2dXRtX2=
+1lZGl1bT1lbWFpbF9hY3Rpb25cdTAwMjZ1dG1fc291cmNlPWVtYWlsIiwiaW50ZXJuYWwiOiJlO=
+GQ5MDY1ZDlhYmQwMThiZTJhYjAxIiwibGlua19pZCI6MjR9/b03734367f8422cc07d66df6d47=
+06b042de142ebfcd95a32537d990257e8bfdb" style=3D"mso-line-height-rule: exact=
+ly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"><img width=
+=3D"600" style=3D"width: 100%; max-width: 600px; height: auto; outline: non=
+e; text-decoration: none; -ms-interpolation-mode: bicubic; border: 0;" alt=
+=3D"" src=3D"https://userimg-bee.customeriomail.com/images/client-env-10980=
+0/Quetext-Upsell2-Slice1.png"/></a>
+                                                                           =
+   </div>
+                                                                           =
+ </td>
+                                                                          <=
+/tr>
+                                                                          <=
+tr>
+                                                                           =
+ <td align=3D"center" style=3D"font-size: 0; line-height: 0; mso-line-heigh=
+t-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=
+;">
+                                                                           =
+   <div class=3D"hide-for-desktop" style=3D"font-size: 0pt; line-height: 0p=
+t; display: none; max-height: 0; max-width: 0; visibility: hidden; opacity:=
+ 0; overflow: hidden; width: 0; height: 0;">
+<a target=3D"_blank" href=3D"https://email.quetext.com/e/c/eyJlbWFpbF9pZCI6=
+ImRnVG8yUVlBQUl2aXF3R0s0cXNCQVlfVTM5akpTb25KdFFENTNtRXMydz09IiwiaHJlZiI6Imh=
+0dHBzOi8vd3d3LnF1ZXRleHQuY29tL2FjY291bnQvc3Vic2NyaXB0aW9uP3V0bV9zb3VyY2U9Y3=
+VzdG9tZXIuaW9cdTAwMjZ1dG1fbWVkaXVtPWVtYWlsXHUwMDI2dXRtX2NhbXBhaWduPUZyZWUrM=
+Vx1MDAyNnV0bV9jYW1wYWlnbj1GcmVlK0NvbnZlcnNpb25cdTAwMjZ1dG1fY29udGVudD1FbWFp=
+bCsyXHUwMDI2dXRtX21lZGl1bT1lbWFpbF9hY3Rpb25cdTAwMjZ1dG1fc291cmNlPWVtYWlsIiw=
+iaW50ZXJuYWwiOiJlOGQ5MDY1ZDlhYmQwMThiZTJhYjAxIiwibGlua19pZCI6MjR9/b03734367=
+f8422cc07d66df6d4706b042de142ebfcd95a32537d990257e8bfdb" style=3D"mso-line-=
+height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust:=
+ 100%;"><img alt=3D"" border=3D"0" style=3D"display: block; width: 100%; ma=
+x-width: 600px; height: auto; outline: none; text-decoration: none; -ms-int=
+erpolation-mode: bicubic; border: 0;" width=3D"600" src=3D"https://userimg-=
+bee.customeriomail.com/images/client-env-109800/Group%2043.png"/></a>
+                                                                           =
+   </div>
+                                                                           =
+ </td>
+                                                                          <=
+/tr>
+                                                                        </t=
+body>
+                                                                      </tab=
+le>
+                                                                      <tabl=
+e border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"90%" style=3D"b=
+order-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms=
+-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                                                        <tb=
+ody>
+                                                                         =
+=20
+                                                                         <t=
+r>
+                                                                           =
+ <td align=3D"center" style=3D"text-align: center; font-family: &#39;Open S=
+ans&#39;, Helvetica, Arial, sans-serif !important; font-size: 36px; line-he=
+ight: 48px; font-weight: 600; color: #100F57; mso-line-height-rule: exactly=
+; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding: 30px=
+ 0px 10px;" class=3D"mheadline6">Upgrade Today<br/>=20
+To Access All of Quetext&#39;s Features!
+
+
+
+                                                                           =
+ </td>
+                                                                          <=
+/tr>
+                                                                          <=
+tr>
+                                                                           =
+    <td align=3D"center" style=3D"text-align: left; font-family: &#39;Open =
+Sans&#39;, Helvetica, Arial, sans-serif !important; font-size: 22px; line-h=
+eight: 30px; font-weight: normal; color: #100F57; mso-line-height-rule: exa=
+ctly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding: =
+10px 0px 20px;" class=3D"mheadline5">
+                                                                           =
+    =20
+
+Gain access to all Quetext&#39;s features by subscribing to a paid subscrip=
+tion plan! Get up to 50% off Quetext paid subscription plans during our big=
+gest sale of the year! <br/>
+<br/>
+You will get access to our <span style=3D"color: #7C69EF; font-weight: bold=
+;">DeepSearch=E2=84=A2</span> Technology as well as our NEW! Annotation too=
+l, Enhanced Citation Generator, our AI Detection Tool and more.<br/><br/>
+
+                                                                           =
+        <strong>Get excited, writing resolution continues today.</strong>
+
+                                                                           =
+       =20
+                                                                           =
+      =20
+                                                                           =
+ </td>
+                                                                          <=
+/tr>
+                                                                         =
+=20
+                                                                           =
+<tr>
+                                                                           =
+ <td align=3D"center" style=3D"padding-bottom: 0px; mso-line-height-rule: e=
+xactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                                                           =
+   <table style=3D"border-collapse: collapse; mso-table-lspace: 0pt; mso-ta=
+ble-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=
+;">
+                                                                        <tb=
+ody>
+                                                                          <=
+tr>
+                                                                           =
+ <td align=3D"center" width=3D"218" style=3D"padding-top: 0px; mso-line-hei=
+ght-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+                                                                        =20
+                                                                           =
+ </td>
+                                                                          <=
+/tr>
+                                                                         =
+=20
+                                                                        </t=
+body>
+                                                                      </tab=
+le>
+                                                                           =
+ </td>
+                                                                          <=
+/tr>
+                                                                        </t=
+body>
+                                                                      </tab=
+le>
+                                                                    </td>
+                                                                  </tr>
+                                                                </tbody>
+                                                              </table>
+                                                            </td>
+                                                          </tr>
+                                                         =20
+                                                         =20
+                                                         =20
+                                                        </tbody>
+                                                      </table>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <table width=3D"516" align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 516px; width=
+: 100%; background-color: #eff3fa; border-collapse: collapse; mso-table-lsp=
+ace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-s=
+ize-adjust: 100%;" bgcolor=3D"#eff3fa">
+                                <tbody>
+                                  <tr>
+                                    <td align=3D"center" style=3D"font-size=
+: 0; line-height: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 1=
+00%; -webkit-text-size-adjust: 100%;">
+<!-- HEADLINE 2 + COPY -->
+                                     =20
+                                      <table width=3D"100%" align=3D"center=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 516p=
+x; width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table=
+-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                        <tbody>
+                                          <tr>
+                                            <td align=3D"center" style=3D"m=
+so-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size=
+-adjust: 100%; padding: 0 0 0px;">
+                                              <table width=3D"100%" align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"max-w=
+idth: 516px; width: 100%; background-color: #FAFBFD; border-collapse: colla=
+pse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 10=
+0%; -webkit-text-size-adjust: 100%;" bgcolor=3D"#FAFBFD">
+                                                <tbody>
+                                                  <tr>
+                                                    <td align=3D"center" st=
+yle=3D"mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-t=
+ext-size-adjust: 100%;">
+                                                      <table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:=
+ collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adju=
+st: 100%; -webkit-text-size-adjust: 100%;">
+                                                        <tbody>
+                                                       =20
+                                                          <tr>
+                                                            <td align=3D"ce=
+nter" style=3D"mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -=
+webkit-text-size-adjust: 100%; padding: 0 0 31px;">
+                                                              <table class=
+=3D"mw95" width=3D"100%" align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" style=3D"max-width: 516px; width: 100%; background-color: #=
+FAFBFD; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace:=
+ 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" bgcolor=
+=3D"#FAFBFD">
+                                                                <tbody>
+                                                                  <tr>
+                                                                    <td ali=
+gn=3D"center" style=3D"mso-line-height-rule: exactly; -ms-text-size-adjust:=
+ 100%; -webkit-text-size-adjust: 100%;">
+                                                                      <tabl=
+e style=3D"border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                                                        <tb=
+ody>
+                                                                          <=
+tr>
+                                                                           =
+ <td align=3D"center" width=3D"207" style=3D"padding-top: 30px; mso-line-he=
+ight-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%;">
+                                                                           =
+   <div class=3D"">
+<a href=3D"https://email.quetext.com/e/c/eyJlbWFpbF9pZCI6ImRnVG8yUVlBQUl2aX=
+F3R0s0cXNCQVlfVTM5akpTb25KdFFENTNtRXMydz09IiwiaHJlZiI6Imh0dHBzOi8vd3d3LnF1Z=
+XRleHQuY29tL2FjY291bnQvc3Vic2NyaXB0aW9uP3V0bV9zb3VyY2U9Y3VzdG9tZXIuaW9cdTAw=
+MjZ1dG1fbWVkaXVtPWVtYWlsXHUwMDI2dXRtX2NhbXBhaWduPUZyZWUrMVx1MDAyNnV0bV9jYW1=
+wYWlnbj1GcmVlK0NvbnZlcnNpb25cdTAwMjZ1dG1fY29udGVudD1FbWFpbCsyXHUwMDI2dXRtX2=
+1lZGl1bT1lbWFpbF9hY3Rpb25cdTAwMjZ1dG1fc291cmNlPWVtYWlsIiwiaW50ZXJuYWwiOiJlO=
+GQ5MDY1ZDlhYmQwMThiZTJhYjAxIiwibGlua19pZCI6MjR9/b03734367f8422cc07d66df6d47=
+06b042de142ebfcd95a32537d990257e8bfdb" style=3D"mso-line-height-rule: exact=
+ly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"><img width=
+=3D"207" style=3D"width: 207px; max-width: 207px; height: auto; outline: no=
+ne; text-decoration: none; -ms-interpolation-mode: bicubic; border: 0;" alt=
+=3D"" src=3D"https://userimg-bee.customeriomail.com/images/client-env-10980=
+0/Wizard.png"/></a>
+                                                                           =
+   </div>
+                                                                           =
+ </td>
+                                                                          <=
+/tr>
+                                                                         =
+=20
+                                                                        </t=
+body>
+                                                                      </tab=
+le>
+                                                                      <tabl=
+e border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"90%" style=3D"b=
+order-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms=
+-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                                                        <tb=
+ody>
+                                                                         =
+=20
+                                                                          <=
+tr>
+                                                                           =
+ <td align=3D"center" style=3D"padding-top: 25px; padding-bottom: 30px; tex=
+t-align: center; font-family: &#39;Open Sans&#39;, Helvetica, Arial, sans-s=
+erif !important; font-size: 36px; line-height: 30px; font-weight: 700; colo=
+r: #100F57; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%;">Unlock The Magic
+                                                                           =
+ </td>
+                                                                          <=
+/tr>
+                                                                          =
+=20
+                                                                          <=
+tr>
+                                                                           =
+ <td align=3D"center" style=3D"padding-top: 22px; padding-bottom: 0px; text=
+-align: left; font-family: &#39;Open Sans&#39;, Helvetica, Arial, sans-seri=
+f !important; font-size: 22px; line-height: 30px; font-weight: normal; colo=
+r: #100F57; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%;">
+                                                                           =
+=20
+                                                                           =
+ <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"border-collapse: collapse; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+                                                                           =
+     <tbody><tr>
+                                                                           =
+         <td align=3D"center" width=3D"34" style=3D"padding-top: 0px; mso-l=
+ine-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%;">
+                                                                           =
+   <div class=3D"">
+<a href=3D"https://email.quetext.com/e/c/eyJlbWFpbF9pZCI6ImRnVG8yUVlBQUl2aX=
+F3R0s0cXNCQVlfVTM5akpTb25KdFFENTNtRXMydz09IiwiaHJlZiI6Imh0dHBzOi8vd3d3LnF1Z=
+XRleHQuY29tL2FjY291bnQvc3Vic2NyaXB0aW9uP3V0bV9zb3VyY2U9Y3VzdG9tZXIuaW9cdTAw=
+MjZ1dG1fbWVkaXVtPWVtYWlsXHUwMDI2dXRtX2NhbXBhaWduPUZyZWUrMVx1MDAyNnV0bV9jYW1=
+wYWlnbj1GcmVlK0NvbnZlcnNpb25cdTAwMjZ1dG1fY29udGVudD1FbWFpbCsyXHUwMDI2dXRtX2=
+1lZGl1bT1lbWFpbF9hY3Rpb25cdTAwMjZ1dG1fc291cmNlPWVtYWlsIiwiaW50ZXJuYWwiOiJlO=
+GQ5MDY1ZDlhYmQwMThiZTJhYjAxIiwibGlua19pZCI6MjR9/b03734367f8422cc07d66df6d47=
+06b042de142ebfcd95a32537d990257e8bfdb" style=3D"mso-line-height-rule: exact=
+ly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"><img width=
+=3D"34" style=3D"width: 34px; max-width: 34px; height: auto; outline: none;=
+ text-decoration: none; -ms-interpolation-mode: bicubic; border: 0;" alt=3D=
+"" src=3D"https://userimg-bee.customeriomail.com/images/client-env-109800/C=
+hecks%20%281%29.png"/></a>
+                                                                           =
+   </div>
+                                                                           =
+ </td>
+                                                                           =
+    <td align=3D"right" width=3D"70%" style=3D"padding-top: 0px; padding-bo=
+ttom: 0px; text-align: left; font-family: &#39;Open Sans&#39;, Helvetica, A=
+rial, sans-serif !important; font-size: 22px; line-height: 28px; font-weigh=
+t: bold; color: #100F57; mso-line-height-rule: exactly; -ms-text-size-adjus=
+t: 100%; -webkit-text-size-adjust: 100%;">Deep Search Plagiarism Checker
+
+
+                                                                           =
+ </td>
+                                                                           =
+ </tr>
+                                                                           =
+ </tbody></table>
+
+                                                                           =
+ </td>
+                                                                          <=
+/tr>
+                                                                           =
+<tr>
+                                                                           =
+ <td align=3D"center" style=3D"padding-top: 22px; padding-bottom: 0px; text=
+-align: left; font-family: &#39;Open Sans&#39;, Helvetica, Arial, sans-seri=
+f !important; font-size: 22px; line-height: 30px; font-weight: normal; colo=
+r: #100F57; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%;">
+                                                                           =
+=20
+                                                                           =
+ <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"border-collapse: collapse; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+                                                                           =
+     <tbody><tr>
+                                                                           =
+         <td align=3D"center" width=3D"34" style=3D"padding-top: 0px; mso-l=
+ine-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%;">
+                                                                           =
+   <div class=3D"">
+<a href=3D"https://email.quetext.com/e/c/eyJlbWFpbF9pZCI6ImRnVG8yUVlBQUl2aX=
+F3R0s0cXNCQVlfVTM5akpTb25KdFFENTNtRXMydz09IiwiaHJlZiI6Imh0dHBzOi8vd3d3LnF1Z=
+XRleHQuY29tL2FjY291bnQvc3Vic2NyaXB0aW9uP3V0bV9zb3VyY2U9Y3VzdG9tZXIuaW9cdTAw=
+MjZ1dG1fbWVkaXVtPWVtYWlsXHUwMDI2dXRtX2NhbXBhaWduPUZyZWUrMVx1MDAyNnV0bV9jYW1=
+wYWlnbj1GcmVlK0NvbnZlcnNpb25cdTAwMjZ1dG1fY29udGVudD1FbWFpbCsyXHUwMDI2dXRtX2=
+1lZGl1bT1lbWFpbF9hY3Rpb25cdTAwMjZ1dG1fc291cmNlPWVtYWlsIiwiaW50ZXJuYWwiOiJlO=
+GQ5MDY1ZDlhYmQwMThiZTJhYjAxIiwibGlua19pZCI6MjR9/b03734367f8422cc07d66df6d47=
+06b042de142ebfcd95a32537d990257e8bfdb" style=3D"mso-line-height-rule: exact=
+ly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"><img width=
+=3D"34" style=3D"width: 34px; max-width: 34px; height: auto; outline: none;=
+ text-decoration: none; -ms-interpolation-mode: bicubic; border: 0;" alt=3D=
+"" src=3D"https://userimg-bee.customeriomail.com/images/client-env-109800/C=
+hecks%20%281%29.png"/></a>
+                                                                           =
+   </div>
+                                                                           =
+ </td>
+                                                                           =
+    <td align=3D"right" width=3D"70%" style=3D"padding-top: 0px; padding-bo=
+ttom: 0px; text-align: left; font-family: &#39;Open Sans&#39;, Helvetica, A=
+rial, sans-serif !important; font-size: 22px; line-height: 28px; font-weigh=
+t: bold; color: #100F57; mso-line-height-rule: exactly; -ms-text-size-adjus=
+t: 100%; -webkit-text-size-adjust: 100%;">AI Content Detection
+
+
+                                                                           =
+                                                          </td>
+</tr>
+                                                                           =
+ </tbody></table>
+
+                                                                           =
+ </td>
+                                                                          <=
+/tr> =20
+                                                                           =
+<tr>
+                                                                           =
+ <td align=3D"center" style=3D"padding-top: 22px; padding-bottom: 0px; text=
+-align: left; font-family: &#39;Open Sans&#39;, Helvetica, Arial, sans-seri=
+f !important; font-size: 22px; line-height: 30px; font-weight: normal; colo=
+r: #100F57; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%;">
+                                                                           =
+=20
+                                                                           =
+ <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"border-collapse: collapse; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+                                                                           =
+     <tbody><tr>
+                                                                           =
+         <td align=3D"center" width=3D"34" style=3D"padding-top: 0px; mso-l=
+ine-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%;">
+                                                                     =20
+                                                                           =
+ </td>
+                                                                           =
+    <td align=3D"right" width=3D"70%" style=3D"padding-top: 0px; padding-bo=
+ttom: 0px; text-align: left; font-family: &#39;Open Sans&#39;, Helvetica, A=
+rial, sans-serif !important; font-size: 18px; color: #100F57; mso-line-heig=
+ht-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100=
+%;">Performs Detailed, Line-by-Line Analysis, Flags Content from All AI Wri=
+ting Tools &amp; Generates Accurate &amp; Fast Detection Results
+
+
+                                                                           =
+                                                          </td>
+</tr>
+                                                                           =
+ </tbody></table>
+
+                                                                           =
+ </td>
+                                                                          <=
+/tr> =20
+   <tr>
+                                                                           =
+ <td align=3D"center" style=3D"padding-top: 22px; padding-bottom: 0px; text=
+-align: left; font-family: &#39;Open Sans&#39;, Helvetica, Arial, sans-seri=
+f !important; font-size: 22px; line-height: 30px; font-weight: normal; colo=
+r: #100F57; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%;">
+                                                                           =
+=20
+                                                                           =
+ <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"border-collapse: collapse; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+                                                                           =
+     <tbody><tr>
+                                                                           =
+         <td align=3D"center" width=3D"34" style=3D"padding-top: 0px; mso-l=
+ine-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%;">
+                                                                           =
+   <div class=3D"">
+<a href=3D"https://email.quetext.com/e/c/eyJlbWFpbF9pZCI6ImRnVG8yUVlBQUl2aX=
+F3R0s0cXNCQVlfVTM5akpTb25KdFFENTNtRXMydz09IiwiaHJlZiI6Imh0dHBzOi8vd3d3LnF1Z=
+XRleHQuY29tL2FjY291bnQvc3Vic2NyaXB0aW9uP3V0bV9zb3VyY2U9Y3VzdG9tZXIuaW9cdTAw=
+MjZ1dG1fbWVkaXVtPWVtYWlsXHUwMDI2dXRtX2NhbXBhaWduPUZyZWUrMVx1MDAyNnV0bV9jYW1=
+wYWlnbj1GcmVlK0NvbnZlcnNpb25cdTAwMjZ1dG1fY29udGVudD1FbWFpbCsyXHUwMDI2dXRtX2=
+1lZGl1bT1lbWFpbF9hY3Rpb25cdTAwMjZ1dG1fc291cmNlPWVtYWlsIiwiaW50ZXJuYWwiOiJlO=
+GQ5MDY1ZDlhYmQwMThiZTJhYjAxIiwibGlua19pZCI6MjR9/b03734367f8422cc07d66df6d47=
+06b042de142ebfcd95a32537d990257e8bfdb" style=3D"mso-line-height-rule: exact=
+ly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"><img width=
+=3D"34" style=3D"width: 34px; max-width: 34px; height: auto; outline: none;=
+ text-decoration: none; -ms-interpolation-mode: bicubic; border: 0;" alt=3D=
+"" src=3D"https://userimg-bee.customeriomail.com/images/client-env-109800/C=
+hecks%20%281%29.png"/></a>
+                                                                           =
+   </div>
+                                                                           =
+ </td>
+                                                                           =
+    <td align=3D"right" width=3D"70%" style=3D"padding-top: 0px; padding-bo=
+ttom: 0px; text-align: left; font-family: &#39;Open Sans&#39;, Helvetica, A=
+rial, sans-serif !important; font-size: 22px; line-height: 28px; font-weigh=
+t: bold; color: #100F57; mso-line-height-rule: exactly; -ms-text-size-adjus=
+t: 100%; -webkit-text-size-adjust: 100%;">NEW! Annotation Feature
+
+
+                                                                           =
+ </td>
+                                                                           =
+ </tr>
+                                                                           =
+ </tbody></table>
+
+                                                                           =
+ </td>
+                                                                          <=
+/tr> =20
+          <tr>
+                                                                           =
+ <td align=3D"center" style=3D"padding-top: 22px; padding-bottom: 0px; text=
+-align: left; font-family: &#39;Open Sans&#39;, Helvetica, Arial, sans-seri=
+f !important; font-size: 22px; line-height: 30px; font-weight: normal; colo=
+r: #100F57; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%;">
+                                                                           =
+=20
+                                                                           =
+ <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"border-collapse: collapse; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+                                                                           =
+     <tbody><tr>
+                                                                           =
+         <td align=3D"center" width=3D"34" style=3D"padding-top: 0px; mso-l=
+ine-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%;">
+                                                                     =20
+                                                                           =
+ </td>
+                                                                           =
+    <td align=3D"right" width=3D"70%" style=3D"padding-top: 0px; padding-bo=
+ttom: 0px; text-align: left; font-family: &#39;Open Sans&#39;, Helvetica, A=
+rial, sans-serif !important; font-size: 18px; color: #100F57; mso-line-heig=
+ht-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100=
+%;">Collaborate on comments and revisions, edit, save, and recheck reports =
+after annotations are made, resolve comments and more!
+
+
+                                                                           =
+                                                          </td>
+</tr>
+                                                                           =
+ </tbody></table>
+
+                                                                           =
+ </td>
+                                                                          <=
+/tr> =20
+   <tr>                                                                  </=
+tr>
+<tr>
+                                                                           =
+ <td align=3D"center" style=3D"padding-top: 22px; padding-bottom: 0px; text=
+-align: left; font-family: &#39;Open Sans&#39;, Helvetica, Arial, sans-seri=
+f !important; font-size: 22px; line-height: 30px; font-weight: normal; colo=
+r: #100F57; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%;">
+                                                                           =
+=20
+                                                                           =
+ <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"border-collapse: collapse; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+                                                                           =
+     <tbody><tr>
+                                                                           =
+         <td align=3D"center" width=3D"34" style=3D"padding-top: 0px; mso-l=
+ine-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%;">
+                                                                           =
+   <div class=3D"">
+<a href=3D"https://email.quetext.com/e/c/eyJlbWFpbF9pZCI6ImRnVG8yUVlBQUl2aX=
+F3R0s0cXNCQVlfVTM5akpTb25KdFFENTNtRXMydz09IiwiaHJlZiI6Imh0dHBzOi8vd3d3LnF1Z=
+XRleHQuY29tL2FjY291bnQvc3Vic2NyaXB0aW9uP3V0bV9zb3VyY2U9Y3VzdG9tZXIuaW9cdTAw=
+MjZ1dG1fbWVkaXVtPWVtYWlsXHUwMDI2dXRtX2NhbXBhaWduPUZyZWUrMVx1MDAyNnV0bV9jYW1=
+wYWlnbj1GcmVlK0NvbnZlcnNpb25cdTAwMjZ1dG1fY29udGVudD1FbWFpbCsyXHUwMDI2dXRtX2=
+1lZGl1bT1lbWFpbF9hY3Rpb25cdTAwMjZ1dG1fc291cmNlPWVtYWlsIiwiaW50ZXJuYWwiOiJlO=
+GQ5MDY1ZDlhYmQwMThiZTJhYjAxIiwibGlua19pZCI6MjR9/b03734367f8422cc07d66df6d47=
+06b042de142ebfcd95a32537d990257e8bfdb" style=3D"mso-line-height-rule: exact=
+ly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"><img width=
+=3D"34" style=3D"width: 34px; max-width: 34px; height: auto; outline: none;=
+ text-decoration: none; -ms-interpolation-mode: bicubic; border: 0;" alt=3D=
+"" src=3D"https://userimg-bee.customeriomail.com/images/client-env-109800/C=
+hecks%20%281%29.png"/></a>
+                                                                           =
+   </div>
+                                                                           =
+ </td>
+                                                                           =
+    <td align=3D"right" width=3D"70%" style=3D"padding-top: 0px; padding-bo=
+ttom: 0px; text-align: left; font-family: &#39;Open Sans&#39;, Helvetica, A=
+rial, sans-serif !important; font-size: 22px; line-height: 28px; font-weigh=
+t: bold; color: #100F57; mso-line-height-rule: exactly; -ms-text-size-adjus=
+t: 100%; -webkit-text-size-adjust: 100%;">Enhanced Citation Generator
+
+
+                                                                           =
+ </td>
+                                                                           =
+ </tr>
+                                                                           =
+ </tbody></table>
+
+                                                                           =
+ </td>
+                                                                          <=
+/tr> =20
+                                                                          <=
+tr>
+                                                                           =
+ <td align=3D"center" style=3D"padding-top: 22px; padding-bottom: 0px; text=
+-align: left; font-family: &#39;Open Sans&#39;, Helvetica, Arial, sans-seri=
+f !important; font-size: 22px; line-height: 30px; font-weight: normal; colo=
+r: #100F57; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%;">
+                                                                           =
+=20
+                                                                           =
+ <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"border-collapse: collapse; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+                                                                           =
+     <tbody><tr>
+                                                                           =
+         <td align=3D"center" width=3D"34" style=3D"padding-top: 0px; mso-l=
+ine-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%;">
+                                                                           =
+   <div class=3D"">
+<a href=3D"https://email.quetext.com/e/c/eyJlbWFpbF9pZCI6ImRnVG8yUVlBQUl2aX=
+F3R0s0cXNCQVlfVTM5akpTb25KdFFENTNtRXMydz09IiwiaHJlZiI6Imh0dHBzOi8vd3d3LnF1Z=
+XRleHQuY29tL2FjY291bnQvc3Vic2NyaXB0aW9uP3V0bV9zb3VyY2U9Y3VzdG9tZXIuaW9cdTAw=
+MjZ1dG1fbWVkaXVtPWVtYWlsXHUwMDI2dXRtX2NhbXBhaWduPUZyZWUrMVx1MDAyNnV0bV9jYW1=
+wYWlnbj1GcmVlK0NvbnZlcnNpb25cdTAwMjZ1dG1fY29udGVudD1FbWFpbCsyXHUwMDI2dXRtX2=
+1lZGl1bT1lbWFpbF9hY3Rpb25cdTAwMjZ1dG1fc291cmNlPWVtYWlsIiwiaW50ZXJuYWwiOiJlO=
+GQ5MDY1ZDlhYmQwMThiZTJhYjAxIiwibGlua19pZCI6MjR9/b03734367f8422cc07d66df6d47=
+06b042de142ebfcd95a32537d990257e8bfdb" style=3D"mso-line-height-rule: exact=
+ly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"><img width=
+=3D"34" style=3D"width: 34px; max-width: 34px; height: auto; outline: none;=
+ text-decoration: none; -ms-interpolation-mode: bicubic; border: 0;" alt=3D=
+"" src=3D"https://userimg-bee.customeriomail.com/images/client-env-109800/C=
+hecks%20%281%29.png"/></a>
+                                                                           =
+   </div>
+                                                                           =
+ </td>
+                                                                           =
+    <td align=3D"right" width=3D"70%" style=3D"padding-top: 0px; padding-bo=
+ttom: 0px; text-align: left; font-family: &#39;Open Sans&#39;, Helvetica, A=
+rial, sans-serif !important; font-size: 22px; line-height: 28px; font-weigh=
+t: bold; color: #100F57; mso-line-height-rule: exactly; -ms-text-size-adjus=
+t: 100%; -webkit-text-size-adjust: 100%;">Grammar and Spell Check
+
+
+                                                                           =
+ </td>
+                                                                           =
+ </tr>
+                                                                           =
+ </tbody></table>
+
+                                                                           =
+ </td>
+                                                                          <=
+/tr>                                                                  <tr>
+                                                                           =
+ <td align=3D"center" style=3D"padding-top: 22px; padding-bottom: 0px; text=
+-align: left; font-family: &#39;Open Sans&#39;, Helvetica, Arial, sans-seri=
+f !important; font-size: 22px; line-height: 30px; font-weight: normal; colo=
+r: #100F57; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%;">
+                                                                           =
+=20
+                                                                           =
+ <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"border-collapse: collapse; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+                                                                           =
+     <tbody><tr>
+                                                                           =
+         <td align=3D"center" width=3D"34" style=3D"padding-top: 0px; mso-l=
+ine-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%;">
+                                                                           =
+   <div class=3D"">
+<a href=3D"https://email.quetext.com/e/c/eyJlbWFpbF9pZCI6ImRnVG8yUVlBQUl2aX=
+F3R0s0cXNCQVlfVTM5akpTb25KdFFENTNtRXMydz09IiwiaHJlZiI6Imh0dHBzOi8vd3d3LnF1Z=
+XRleHQuY29tL2FjY291bnQvc3Vic2NyaXB0aW9uP3V0bV9zb3VyY2U9Y3VzdG9tZXIuaW9cdTAw=
+MjZ1dG1fbWVkaXVtPWVtYWlsXHUwMDI2dXRtX2NhbXBhaWduPUZyZWUrMVx1MDAyNnV0bV9jYW1=
+wYWlnbj1GcmVlK0NvbnZlcnNpb25cdTAwMjZ1dG1fY29udGVudD1FbWFpbCsyXHUwMDI2dXRtX2=
+1lZGl1bT1lbWFpbF9hY3Rpb25cdTAwMjZ1dG1fc291cmNlPWVtYWlsIiwiaW50ZXJuYWwiOiJlO=
+GQ5MDY1ZDlhYmQwMThiZTJhYjAxIiwibGlua19pZCI6MjR9/b03734367f8422cc07d66df6d47=
+06b042de142ebfcd95a32537d990257e8bfdb" style=3D"mso-line-height-rule: exact=
+ly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"><img width=
+=3D"34" style=3D"width: 34px; max-width: 34px; height: auto; outline: none;=
+ text-decoration: none; -ms-interpolation-mode: bicubic; border: 0;" alt=3D=
+"" src=3D"https://userimg-bee.customeriomail.com/images/client-env-109800/C=
+hecks%20%281%29.png"/></a>
+                                                                           =
+   </div>
+                                                                           =
+ </td>
+                                                                           =
+    <td align=3D"right" width=3D"70%" style=3D"padding-top: 0px; padding-bo=
+ttom: 0px; text-align: left; font-family: &#39;Open Sans&#39;, Helvetica, A=
+rial, sans-serif !important; font-size: 22px; line-height: 28px; font-weigh=
+t: bold; color: #100F57; mso-line-height-rule: exactly; -ms-text-size-adjus=
+t: 100%; -webkit-text-size-adjust: 100%;">Download &amp; Share Originality =
+Reports
+                                                                           =
+ </td>
+                                                                           =
+     </tr>
+                                                                           =
+ </tbody></table>
+
+                                                                           =
+ </td>
+                                                                          <=
+/tr>
+                                                                          <=
+tr>
+                                                                           =
+ <td align=3D"center" style=3D"padding-top: 22px; padding-bottom: 0px; text=
+-align: left; font-family: &#39;Open Sans&#39;, Helvetica, Arial, sans-seri=
+f !important; font-size: 22px; line-height: 30px; font-weight: normal; colo=
+r: #100F57; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%;">
+                                                                           =
+=20
+                                                                           =
+ <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"border-collapse: collapse; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+                                                                           =
+     <tbody><tr>
+                                                                           =
+         <td align=3D"center" width=3D"34" style=3D"padding-top: 0px; mso-l=
+ine-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%;">
+                                                                           =
+   <div class=3D"">
+<a href=3D"https://email.quetext.com/e/c/eyJlbWFpbF9pZCI6ImRnVG8yUVlBQUl2aX=
+F3R0s0cXNCQVlfVTM5akpTb25KdFFENTNtRXMydz09IiwiaHJlZiI6Imh0dHBzOi8vd3d3LnF1Z=
+XRleHQuY29tL2FjY291bnQvc3Vic2NyaXB0aW9uP3V0bV9zb3VyY2U9Y3VzdG9tZXIuaW9cdTAw=
+MjZ1dG1fbWVkaXVtPWVtYWlsXHUwMDI2dXRtX2NhbXBhaWduPUZyZWUrMVx1MDAyNnV0bV9jYW1=
+wYWlnbj1GcmVlK0NvbnZlcnNpb25cdTAwMjZ1dG1fY29udGVudD1FbWFpbCsyXHUwMDI2dXRtX2=
+1lZGl1bT1lbWFpbF9hY3Rpb25cdTAwMjZ1dG1fc291cmNlPWVtYWlsIiwiaW50ZXJuYWwiOiJlO=
+GQ5MDY1ZDlhYmQwMThiZTJhYjAxIiwibGlua19pZCI6MjR9/b03734367f8422cc07d66df6d47=
+06b042de142ebfcd95a32537d990257e8bfdb" style=3D"mso-line-height-rule: exact=
+ly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"><img width=
+=3D"34" style=3D"width: 34px; max-width: 34px; height: auto; outline: none;=
+ text-decoration: none; -ms-interpolation-mode: bicubic; border: 0;" alt=3D=
+"" src=3D"https://userimg-bee.customeriomail.com/images/client-env-109800/C=
+hecks%20%281%29.png"/></a>
+                                                                           =
+   </div>
+                                                                           =
+ </td>
+                                                                           =
+    <td align=3D"right" width=3D"70%" style=3D"padding-top: 0px; padding-bo=
+ttom: 0px; text-align: left; font-family: &#39;Open Sans&#39;, Helvetica, A=
+rial, sans-serif !important; font-size: 22px; line-height: 28px; font-weigh=
+t: bold; color: #100F57; mso-line-height-rule: exactly; -ms-text-size-adjus=
+t: 100%; -webkit-text-size-adjust: 100%;">Bulk File Upload
+
+
+
+                                                                           =
+ </td>
+                                                                           =
+     </tr>
+                                                                           =
+ </tbody></table>
+
+                                                                           =
+ </td>
+                                                                          <=
+/tr>
+                                                                           =
+                                                             <tr>
+                                                                           =
+ <td align=3D"center" style=3D"padding-bottom: 0px; mso-line-height-rule: e=
+xactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                                                           =
+   <table style=3D"border-collapse: collapse; mso-table-lspace: 0pt; mso-ta=
+ble-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=
+;">
+                                                                        <tb=
+ody>
+                                                                          <=
+tr>
+                                                                           =
+ <td align=3D"center" width=3D"218" style=3D"padding-top: 20px; mso-line-he=
+ight-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%;">
+                                                                           =
+   <div>
+<!--[if mso]>
+  <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:sch=
+emas-microsoft-com:office:word" href=3D"https://email.quetext.com/e/c/eyJlb=
+WFpbF9pZCI6ImRnVG8yUVlBQUl2aXF3R0s0cXNCQVlfVTM5akpTb25KdFFENTNtRXMydz09Iiwi=
+aHJlZiI6Imh0dHBzOi8vd3d3LnF1ZXRleHQuY29tL2FjY291bnQvc3Vic2NyaXB0aW9uP3V0bV9=
+zb3VyY2U9Y3VzdG9tZXIuaW9cdTAwMjZ1dG1fbWVkaXVtPWVtYWlsXHUwMDI2dXRtX2NhbXBhaW=
+duPUZyZWUrMVx1MDAyNnV0bV9jYW1wYWlnbj1GcmVlK0NvbnZlcnNpb25cdTAwMjZ1dG1fY29ud=
+GVudD1FbWFpbCsyXHUwMDI2dXRtX21lZGl1bT1lbWFpbF9hY3Rpb25cdTAwMjZ1dG1fc291cmNl=
+PWVtYWlsIiwiaW50ZXJuYWwiOiJlOGQ5MDY1ZDlhYmQwMThiZTJhYjAxIiwibGlua19pZCI6MjR=
+9/b03734367f8422cc07d66df6d4706b042de142ebfcd95a32537d990257e8bfdb" style=
+=3D"height:50px;v-text-anchor:middle;width:300px;" arcsize=3D"200%" stroke=
+=3D"f" fillcolor=3D"#1746E0">
+    <w:anchorlock/>
+    <center>
+  <![endif]-->
+      <a href=3D"https://email.quetext.com/e/c/eyJlbWFpbF9pZCI6ImRnVG8yUVlB=
+QUl2aXF3R0s0cXNCQVlfVTM5akpTb25KdFFENTNtRXMydz09IiwiaHJlZiI6Imh0dHBzOi8vd3d=
+3LnF1ZXRleHQuY29tL2FjY291bnQvc3Vic2NyaXB0aW9uP3V0bV9zb3VyY2U9Y3VzdG9tZXIuaW=
+9cdTAwMjZ1dG1fbWVkaXVtPWVtYWlsXHUwMDI2dXRtX2NhbXBhaWduPUZyZWUrMVx1MDAyNnV0b=
+V9jYW1wYWlnbj1GcmVlK0NvbnZlcnNpb25cdTAwMjZ1dG1fY29udGVudD1FbWFpbCsyXHUwMDI2=
+dXRtX21lZGl1bT1lbWFpbF9hY3Rpb25cdTAwMjZ1dG1fc291cmNlPWVtYWlsIiwiaW50ZXJuYWw=
+iOiJlOGQ5MDY1ZDlhYmQwMThiZTJhYjAxIiwibGlua19pZCI6MjR9/b03734367f8422cc07d66=
+df6d4706b042de142ebfcd95a32537d990257e8bfdb" style=3D"background-color: #17=
+46E0; border-radius: 100px; color: #ffffff; display: inline-block; font-fam=
+ily: sans-serif; font-size: 16px; font-weight: bold; line-height: 50px; tex=
+t-align: center; text-decoration: none; width: 300px; -webkit-text-size-adj=
+ust: none; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;">Upgr=
+ade Now</a>
+  <!--[if mso]>
+    </center>
+  </v:roundrect>
+<![endif]-->
+</div>
+                                                                           =
+ </td>
+                                                                          <=
+/tr>
+                                                                         =
+=20
+                                                                        </t=
+body>
+                                                                      </tab=
+le>
+                                                                           =
+ </td>
+                                                                          <=
+/tr>
+                                                                        </t=
+body>
+                                                                      </tab=
+le>
+                                                                    </td>
+                                                                  </tr>
+                                                                </tbody>
+                                                              </table>
+                                                            </td>
+                                                          </tr>
+                                                         =20
+                                                         =20
+                                                         =20
+                                                        </tbody>
+                                                      </table>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                             =20
+                             =20
+                             =20
+                             =20
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                     =20
+                     =20
+                     =20
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" style=3D"width: 100%; max-width: 600px; background-color: #eff3fa; borde=
+r-bottom-right-radius: 100%; border-bottom-left-radius: 100%; border-collap=
+se: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-a=
+djust: 100%; -webkit-text-size-adjust: 100%;" width=3D"600" bgcolor=3D"#eff=
+3fa">
+                        <tbody>
+                          <tr>
+                            <td align=3D"center" style=3D"padding-bottom: 4=
+0px; font-size: 0; line-height: 0; width: 100%; mso-line-height-rule: exact=
+ly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                   =20
+                                 =20
+                              </td>
+                          </tr>
+                      </tbody>
+</table>
+                     =20
+                     =20
+                     <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" style=3D"width: 100%; max-width: 600px; background-color: #eff3fa; border=
+-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text=
+-size-adjust: 100%; -webkit-text-size-adjust: 100%;" width=3D"600" bgcolor=
+=3D"#eff3fa">
+                        <tbody>
+                          <tr>
+                            <td align=3D"center" style=3D"font-size: 0; lin=
+e-height: 0; width: 100%; mso-line-height-rule: exactly; -ms-text-size-adju=
+st: 100%; -webkit-text-size-adjust: 100%; padding: 0;">
+                                <!--#######################################=
+######
+Footer Section
+#################################################-->
+                              <table align=3D"center" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" style=3D"width: 100%; max-width: 600px; backgro=
+und-color: #FAFBFD; border-collapse: collapse; mso-table-lspace: 0pt; mso-t=
+able-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100=
+%;" width=3D"600" bgcolor=3D"#FAFBFD">
+                                <tbody>
+                                  <tr>
+                                    <td align=3D"center" style=3D"font-size=
+: 0; line-height: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 1=
+00%; -webkit-text-size-adjust: 100%; padding: 0;">
+<!-- LOGO -->
+                                     =20
+                                      <!-- SOCIAL ICONS -->
+                                      <table align=3D"center" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" width=3D"80%" style=3D"border-collapse:=
+ collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adju=
+st: 100%; -webkit-text-size-adjust: 100%;">
+                                        <tbody>
+                                          <tr>
+                                            <td align=3D"center" style=3D"f=
+ont-size: 0; line-height: 0; border-bottom-color: #506690; border-bottom-wi=
+dth: 1px; border-bottom-style: solid; mso-line-height-rule: exactly; -ms-te=
+xt-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding: 40px 0 22px;=
+" width=3D"144">
+                                              <table border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" style=3D"width: 150px; border-collapse: collapse=
+; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%;=
+ -webkit-text-size-adjust: 100%;">
+                                                <tbody>
+                                                  <tr>
+                                                    <td align=3D"center" st=
+yle=3D"font-size: 0; line-height: 0; mso-line-height-rule: exactly; -ms-tex=
+t-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding: 0 7px;">
+<a target=3D"_blank" href=3D"https://email.quetext.com/e/c/eyJlbWFpbF9pZCI6=
+ImRnVG8yUVlBQUl2aXF3R0s0cXNCQVlfVTM5akpTb25KdFFENTNtRXMydz09IiwiaHJlZiI6Imh=
+0dHBzOi8vd3d3LmZhY2Vib29rLmNvbS9xdWV0ZXh0Lz91dG1fY2FtcGFpZ249RnJlZStDb252ZX=
+JzaW9uXHUwMDI2dXRtX2NvbnRlbnQ9RW1haWwrMlx1MDAyNnV0bV9tZWRpdW09ZW1haWxfYWN0a=
+W9uXHUwMDI2dXRtX3NvdXJjZT1lbWFpbCIsImludGVybmFsIjoiZThkOTA2NWQ5YWJkMDE4YmUy=
+YWIwMSIsImxpbmtfaWQiOjN9/3363b9e95516287ffd0695cdb60ab141265b7c23825485907e=
+6df81235e83787" style=3D"mso-line-height-rule: exactly; -ms-text-size-adjus=
+t: 100%; -webkit-text-size-adjust: 100%;"><img alt=3D"Facebook" style=3D"wi=
+dth: 13px; display: block; height: auto; outline: none; text-decoration: no=
+ne; -ms-interpolation-mode: bicubic; padding: 0px; border: 0;" width=3D"13"=
+ src=3D"https://userimg-bee.customeriomail.com/images/client-env-109800/fac=
+ebook%20%282%29.png"/></a>
+                                                    </td>
+                                                   =20
+                                                    <td align=3D"center" st=
+yle=3D"font-size: 0; line-height: 0; mso-line-height-rule: exactly; -ms-tex=
+t-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding: 0 7px;">
+<a target=3D"_blank" href=3D"https://email.quetext.com/e/c/eyJlbWFpbF9pZCI6=
+ImRnVG8yUVlBQUl2aXF3R0s0cXNCQVlfVTM5akpTb25KdFFENTNtRXMydz09IiwiaHJlZiI6Imh=
+0dHBzOi8vd3d3LmxpbmtlZGluLmNvbS9wcm9kdWN0cy9xdWV0ZXh0Lz91dG1fY2FtcGFpZ249Rn=
+JlZStDb252ZXJzaW9uXHUwMDI2dXRtX2NvbnRlbnQ9RW1haWwrMlx1MDAyNnV0bV9tZWRpdW09Z=
+W1haWxfYWN0aW9uXHUwMDI2dXRtX3NvdXJjZT1lbWFpbCIsImludGVybmFsIjoiZThkOTA2NWQ5=
+YWJkMDE4YmUyYWIwMSIsImxpbmtfaWQiOjR9/8d1bfe1f9c79425a1c78f4d1450f7611140d9c=
+bd4970c3757f46d428a2a59bad" style=3D"mso-line-height-rule: exactly; -ms-tex=
+t-size-adjust: 100%; -webkit-text-size-adjust: 100%;"><img alt=3D"LinkedIn"=
+ style=3D"width: 24px; display: block; height: auto; outline: none; text-de=
+coration: none; -ms-interpolation-mode: bicubic; padding: 0px; border: 0;" =
+width=3D"24" src=3D"https://userimg-bee.customeriomail.com/images/client-en=
+v-109800/LinkedIn%20-%20Negative.png"/></a>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                      <!-- ADDRESS -->
+                                      <table align=3D"center" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 500px; border-colla=
+pse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-=
+adjust: 100%; -webkit-text-size-adjust: 100%;" width=3D"100%">
+                                        <tbody>
+                                          <tr>
+                                            <td width=3D"33%" align=3D"cent=
+er" style=3D"padding-bottom: 0px; padding-top: 20px; font-family: &#39;Open=
+ Sans&#39;, Helvetica, Arial, sans-serif !important; font-size: 12px; line-=
+height: 28px; color: ##100F57 font-weight: normal; font-style: normal; mso-=
+line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%;" valign=3D"top">
+<a style=3D"text-decoration: none; color: #3F414E; mso-line-height-rule: ex=
+actly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" href=3D=
+"?utm_campaign=3DFree+Conversion&amp;utm_content=3DEmail+2&amp;utm_medium=
+=3Demail_action&amp;utm_source=3Demail">View Web Version</a>
+                                         =20
+                                            </td>
+                                            <td width=3D"33%" align=3D"cent=
+er" style=3D"padding-bottom: 0px; padding-top: 20px; font-family: &#39;Open=
+ SanS&#39;, Helvetica, Arial, sans-serif !important; font-size: 12px; line-=
+height: 28px; color: ##100F57 font-weight: normal; font-style: normal; mso-=
+line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%;" valign=3D"top">
+<a style=3D"text-decoration: none; color: #3F414E; mso-line-height-rule: ex=
+actly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" href=3D=
+"?utm_campaign=3DFree+Conversion&amp;utm_content=3DEmail+2&amp;utm_medium=
+=3Demail_action&amp;utm_source=3Demail">Email Preferences</a>
+                                         =20
+                                            </td>
+                                            <td width=3D"33%" align=3D"cent=
+er" style=3D"padding-bottom: 0px; padding-top: 20px; font-family: &#39;Open=
+ SanS&#39;, Helvetica, Arial, sans-serif !important; font-size: 12px; line-=
+height: 28px; color: ##100F57 font-weight: normal; font-style: normal; mso-=
+line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%;" valign=3D"top">
+<a style=3D"text-decoration: none; color: #3F414E; mso-line-height-rule: ex=
+actly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" href=3D=
+"https://email.quetext.com/unsubscribe/dgTo2QYAAIviqwGK4qsBAY_U39jJSonJtQD5=
+3mEs2w=3D=3D">Unsubscribe</a>
+                                         =20
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                      <table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"80%" style=3D"border-collapse: collapse; mso-ta=
+ble-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit=
+-text-size-adjust: 100%;">
+                                        <tbody>
+                                          <tr>
+                                            <td align=3D"center" style=3D"f=
+ont-size: 0; line-height: 0; padding-top: 32px; padding-bottom: 25px; mso-l=
+ine-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%;">
+<a target=3D"_blank" href=3D"https://email.quetext.com/e/c/eyJlbWFpbF9pZCI6=
+ImRnVG8yUVlBQUl2aXF3R0s0cXNCQVlfVTM5akpTb25KdFFENTNtRXMydz09IiwiaHJlZiI6Imh=
+0dHBzOi8vd3d3LnF1ZXRleHQuY29tLz91dG1fY2FtcGFpZ249RnJlZStDb252ZXJzaW9uXHUwMD=
+I2dXRtX2NvbnRlbnQ9RW1haWwrMlx1MDAyNnV0bV9tZWRpdW09ZW1haWxfYWN0aW9uXHUwMDI2d=
+XRtX3NvdXJjZT1lbWFpbCIsImludGVybmFsIjoiZThkOTA2NWQ5YWJkMDE4YmUyYWIwMSIsImxp=
+bmtfaWQiOjF9/9c61a757d169754feb3a5e1ed24f89e8e6534333571521bbe86bd7ef4bc682=
+e5" style=3D"mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -we=
+bkit-text-size-adjust: 100%;"><img alt=3D"Quetext" border=3D"0" style=3D"di=
+splay: block; width: 150px; max-width: 150px; height: auto; outline: none; =
+text-decoration: none; -ms-interpolation-mode: bicubic; border: 0;" width=
+=3D"150" src=3D"https://userimg-bee.customeriomail.com/images/client-env-10=
+9800/Rectangle%202%20%281%29.png"/></a>
+                                    </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                       <table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 500px; border-coll=
+apse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size=
+-adjust: 100%; -webkit-text-size-adjust: 100%;" width=3D"100%">
+                                        <tbody>
+                                          <tr>
+                                            <td align=3D"center" style=3D"p=
+adding-bottom: 42px; font-family: &#39;Open SanS&#39;, Helvetica, Arial, sa=
+ns-serif !important; font-size: 12px; line-height: 28px; color: ##100F57 fo=
+nt-weight: normal; font-style: normal; mso-line-height-rule: exactly; -ms-t=
+ext-size-adjust: 100%; -webkit-text-size-adjust: 100%;" valign=3D"top">
+                                             =C2=A9 2021, Quetext Inc. |  K=
+ansas City, MO 64108
+                                           =20
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <!-- /END FOOTER -->
+                                 =20
+                              </td>
+                          </tr>
+                      </tbody>
+</table>
+                     =20
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+</div>
+          </td>
+          <td style=3D"font-size: 0; mso-line-height-rule: exactly; -ms-tex=
+t-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <grammarly-desktop-integration data-grammarly-shadow-root=3D"true">=20
+    </grammarly-desktop-integration>
+ =20
+
+
+
+   =20
+ =20
+
+<img src=3D"https://email.quetext.com/e/o/eyJlbWFpbF9pZCI6ImRnVG8yUVlBQUl2a=
+XF3R0s0cXNCQVlfVTM5akpTb25KdFFENTNtRXMydz09In0=3D" style=3D"height: 1px !im=
+portant; max-height: 1px !important; max-width: 1px !important; width: 1px =
+!important; display: none !important;" alt=3D""/></body></html><!-- We'll r=
+eplace this content tag with whatever you write in your email  -->
+--a9803b31b197e5225638ed5f567a3b5f42135087b91174dbb730c8488b61--
