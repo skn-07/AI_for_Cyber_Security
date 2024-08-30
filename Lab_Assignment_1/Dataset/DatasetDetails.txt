@@ -1,0 +1,1 @@
+Currently the dataset contains 9 genuine emails and 8 phishing email samples. The first 9 are genuine emails (Sample-00 to Sample08) and the rest are phishing emails.
