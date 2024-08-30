@@ -84,18 +84,6 @@ def phishingDetection(emailID, subject, body, urls, attachments):
     # Rule 5: Check Grammar Errors
     grammarErrorsScore = 1 if checkGrammarErrors(body) else 0
 
-    if (domainCheckScore):
-        print("Not from a whitelisted domain.")
-    if (urgentLanguageScore):
-        print("Urgent language found.")
-    if (mismatchedURLsScore):
-        print("Mismatching URLs found.")
-    if (maliciousAttachmentsScore):
-        print("Dangerous attachment extensions found.")
-    if (grammarErrorsScore):
-        print("Poorly written email.")
-    print("-----------------------------------------------------------")
-    
     # Calculate the weighted score
     phishingScore = (
         weights['domainCheck'] * domainCheckScore +
@@ -115,6 +103,18 @@ def phishingDetection(emailID, subject, body, urls, attachments):
     print("=====================")
     print(f"Phishing Score: {phishingScore:.2f}")
     print(f"Email is {'phishing' if isPhishing else 'not phishing'}.")
+
+    if (domainCheckScore):
+        print("Not from a whitelisted domain.")
+    if (urgentLanguageScore):
+        print("Urgent language found.")
+    if (mismatchedURLsScore):
+        print("Mismatching URLs found.")
+    if (maliciousAttachmentsScore):
+        print("Dangerous attachment extensions found.")
+    if (grammarErrorsScore):
+        print("Poorly written email.")
+    print("-----------------------------------------------------------")
 
     return isPhishing
 
@@ -153,6 +153,6 @@ def evaluateSystem(testFolderPath, actualLabels):
     print(f"False Positive Rate (FPR): {FPR:.2f}")
 
 
-folderPath = "C:\\myFolder\\DUK\\Lab\\AI for Cyber Sec\\Dataset"
+folderPath = "C:\\myFolder\\DUK\\Lab\\AI for Cyber Sec\\Dataset_Backup"
 actualLabels = [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1]  # Labels where 0 is not phishing, and 1 is phishing for your test samples
 evaluateSystem(folderPath, actualLabels)
